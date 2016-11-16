@@ -144,7 +144,7 @@ func (c *Client) Debug(t string, props ...Message) error {
 	if c.Level > DEBUG {
 		return nil
 	}
-	msg := Message{"level": "debug", "type": t}
+	msg := Message{"level": "debug", "message": t}
 	merge(msg, props...)
 	return c.Send(msg)
 }
@@ -154,7 +154,7 @@ func (c *Client) Info(t string, props ...Message) error {
 	if c.Level > INFO {
 		return nil
 	}
-	msg := Message{"level": "info", "type": t}
+	msg := Message{"level": "info", "message": t}
 	merge(msg, props...)
 	return c.Send(msg)
 }
@@ -164,7 +164,7 @@ func (c *Client) Notice(t string, props ...Message) error {
 	if c.Level > NOTICE {
 		return nil
 	}
-	msg := Message{"level": "notice", "type": t}
+	msg := Message{"level": "notice", "message": t}
 	merge(msg, props...)
 	return c.Send(msg)
 }
@@ -174,7 +174,7 @@ func (c *Client) Warn(t string, props ...Message) error {
 	if c.Level > WARNING {
 		return nil
 	}
-	msg := Message{"level": "warning", "type": t}
+	msg := Message{"level": "warning", "message": t}
 	merge(msg, props...)
 	return c.Send(msg)
 }
@@ -184,7 +184,7 @@ func (c *Client) Error(t string, props ...Message) error {
 	if c.Level > ERROR {
 		return nil
 	}
-	msg := Message{"level": "error", "type": t}
+	msg := Message{"level": "error", "message": t}
 	merge(msg, props...)
 	return c.Send(msg)
 }
@@ -194,7 +194,7 @@ func (c *Client) Critical(t string, props ...Message) error {
 	if c.Level > CRITICAL {
 		return nil
 	}
-	msg := Message{"level": "critical", "type": t}
+	msg := Message{"level": "critical", "message": t}
 	merge(msg, props...)
 	return c.Send(msg)
 }
@@ -204,7 +204,7 @@ func (c *Client) Alert(t string, props ...Message) error {
 	if c.Level > ALERT {
 		return nil
 	}
-	msg := Message{"level": "alert", "type": t}
+	msg := Message{"level": "alert", "message": t}
 	merge(msg, props...)
 	return c.Send(msg)
 }
@@ -214,7 +214,7 @@ func (c *Client) Emergency(t string, props ...Message) error {
 	if c.Level > EMERGENCY {
 		return nil
 	}
-	msg := Message{"level": "emergency", "type": t}
+	msg := Message{"level": "emergency", "message": t}
 	merge(msg, props...)
 	return c.Send(msg)
 }
